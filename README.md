@@ -2,14 +2,16 @@
 
 Example applications showing how to build in-product AI agents with the [Kapa Agent Framework](https://docs.kapa.ai/dev/agent/).
 
+Each example demonstrates custom tool definitions with Zod schemas, human-in-the-loop approval flow, streaming responses, and session-based authentication. The examples use mock tools simulating a project management SaaS to showcase all SDK features without requiring a real backend.
+
 ## Examples
 
 | Example | Description |
 |---------|-------------|
-| [`react`](./react) | React + Vite app using `AgentProvider` and `AgentChat` components with custom tools |
-| [`nextjs`](./nextjs) | Next.js App Router app with server-side session creation and the full chat UI |
-| [`react-headless`](./react-headless) | React + Vite app using only hooks (`useAgentChat`) with a fully custom UI |
-| [`vanilla-js`](./vanilla-js) | Plain JavaScript app using the `Agent` class directly, no framework |
+| [`react`](./react) | React + Vite app using `AgentProvider` and `AgentChat` components with custom tool `render` props for inline UI |
+| [`nextjs`](./nextjs) | Next.js App Router app with server-side session creation via Route Handler and the full chat UI |
+| [`react-headless`](./react-headless) | React + Vite app using only the `useAgentChat()` hook with a fully custom UI — no SDK components |
+| [`vanilla-js`](./vanilla-js) | Plain JavaScript app using the `Agent` class directly with DOM rendering via `marked` + `DOMPurify` |
 | [`server`](./server) | Express server that proxies session token creation (used by react, react-headless, and vanilla-js) |
 
 ## Prerequisites
