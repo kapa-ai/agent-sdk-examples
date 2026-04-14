@@ -5,6 +5,7 @@ import { z } from 'zod';
 
 const PROJECT_ID = import.meta.env.VITE_AGENT_PROJECT_ID;
 const INTEGRATION_ID = import.meta.env.VITE_AGENT_INTEGRATION_ID;
+const AGENT_MODEL = import.meta.env.VITE_AGENT_MODEL;
 const SESSION_SERVER = import.meta.env.VITE_SESSION_SERVER_URL;
 
 const delay = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -125,6 +126,7 @@ const streamingIndicator = document.getElementById('streaming-indicator');
 const agent = new Agent({
   projectId: PROJECT_ID,
   integrationId: INTEGRATION_ID,
+  model: AGENT_MODEL,
   tools,
   getSessionToken: async () => {
     const res = await fetch(`${SESSION_SERVER}/api/session`, { method: 'POST' });
