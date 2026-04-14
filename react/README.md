@@ -17,7 +17,7 @@ Demonstrates the full SDK UI out of the box: streaming chat, tool execution with
 
    ```bash
    cp .env.example .env.local
-   # Edit .env.local with your project ID and integration ID
+   # Edit .env.local with your project ID, integration ID, and model
 
    npm install
    npm run dev   # http://localhost:5175

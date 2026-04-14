@@ -16,7 +16,7 @@ Demonstrates:
 
 ```bash
 cp .env.example .env.local
-# Edit .env.local with your API key, project ID, and integration ID
+# Edit .env.local with your API key, project ID, integration ID, and model
 
 npm install
 npm run dev   # http://localhost:5177

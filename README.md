@@ -34,7 +34,7 @@ Each example demonstrates custom tool definitions with Zod schemas, human-in-the
 
    ```bash
    cd react                     # or nextjs, react-headless, vanilla-js
-   cp .env.example .env.local   # fill in your project ID and integration ID
+   cp .env.example .env.local   # fill in your project ID, integration ID, and model
    npm install
    npm run dev
    ```

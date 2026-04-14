@@ -12,6 +12,7 @@ import { exampleTools } from "./tools";
 
 const PROJECT_ID = process.env.NEXT_PUBLIC_PROJECT_ID!;
 const INTEGRATION_ID = process.env.NEXT_PUBLIC_INTEGRATION_ID!;
+const AGENT_MODEL = process.env.NEXT_PUBLIC_AGENT_MODEL!;
 
 const branding: AgentChatBranding = {
   title: "Acme Support",
@@ -41,6 +42,7 @@ const Page = () => {
       getSessionToken={getSessionToken}
       projectId={PROJECT_ID}
       integrationId={INTEGRATION_ID}
+      model={AGENT_MODEL}
       tools={exampleTools}
       builtinToolMeta={BUILTIN_TOOL_META}
       theme={{ accentColor: "#2563eb", colorScheme: "dark" }}
