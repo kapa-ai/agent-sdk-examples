@@ -11,6 +11,7 @@ import { exampleTools } from "./tools";
 const PROJECT_ID = import.meta.env.VITE_AGENT_PROJECT_ID;
 const INTEGRATION_ID = import.meta.env.VITE_AGENT_INTEGRATION_ID;
 const SESSION_SERVER = import.meta.env.VITE_SESSION_SERVER_URL;
+const MODEL = import.meta.env.VITE_AGENT_MODEL || "kapa-agent-1.0";
 
 const BUILTIN_TOOL_META: Record<string, ToolDisplayMeta> = {
   search_knowledge_base: { displayName: "Search Knowledge Base" },
@@ -44,6 +45,7 @@ const App = () => {
       getSessionToken={getSessionToken}
       projectId={PROJECT_ID}
       integrationId={INTEGRATION_ID}
+      model={MODEL}
       tools={exampleTools}
       context={context}
       builtinToolMeta={BUILTIN_TOOL_META}
