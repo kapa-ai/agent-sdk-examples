@@ -1,4 +1,4 @@
-import { type ToolDefinition } from "@kapaai/agent-core";
+import { type ToolDefinition } from "@kapaai/agent-react";
 import { z } from "zod";
 
 const delay = (ms: number) => new Promise((r) => setTimeout(r, ms));

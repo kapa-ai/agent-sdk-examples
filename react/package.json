@@ -7,11 +7,11 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@kapaai/agent-core": "latest",
     "@kapaai/agent-react": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "zod": "^3.23.0"
+    "zod": "^3.23.0",
+    "zod-to-json-schema": "^3.24.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.0",

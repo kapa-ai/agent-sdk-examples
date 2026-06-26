@@ -46,6 +46,7 @@ const Page = () => {
       tools={exampleTools}
       builtinToolMeta={BUILTIN_TOOL_META}
       theme={{ accentColor: "#2563eb", colorScheme: "dark" }}
+      enableHistory={true}
     >
       <div style={{ height: "100vh" }}>
         <AgentChat branding={branding} />

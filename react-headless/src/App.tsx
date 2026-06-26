@@ -33,6 +33,7 @@ export const App = () => {
       tools={tools}
       context={context}
       builtinToolMeta={BUILTIN_TOOL_META}
+      enableHistory={true}
     >
       <ChatUI />
     </AgentProvider>

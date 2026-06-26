@@ -2,7 +2,7 @@
 
 Example applications showing how to build in-product AI agents with the [Kapa Agent Framework](https://docs.kapa.ai/dev/agent/).
 
-Each example demonstrates custom tool definitions with Zod schemas, human-in-the-loop approval flow, streaming responses, and session-based authentication. The examples use mock tools simulating a project management SaaS to showcase all SDK features without requiring a real backend.
+Each example demonstrates custom tool definitions with Zod schemas, human-in-the-loop approval flow, streaming responses, session-based authentication, and conversation history. The examples use mock tools simulating a project management SaaS to showcase all SDK features without requiring a real backend.
 
 ## Examples
 
@@ -17,7 +17,9 @@ Each example demonstrates custom tool definitions with Zod schemas, human-in-the
 ## Prerequisites
 
 - Node.js 18+
-- A Kapa API key, project ID, and integration ID — see [Getting Started](https://docs.kapa.ai/dev/agent/)
+- A Kapa API key, project ID, and integration ID. See [Getting Started](https://docs.kapa.ai/dev/agent/)
+
+All examples use Zod schemas for tool definitions and include `zod` and `zod-to-json-schema` as dependencies. Both are installed automatically with `npm install`.
 
 ## Quick Start
 
@@ -51,10 +53,12 @@ Browser → Kapa API → POST /agent/v1/projects/{id}/agent/chat/ (with session 
 
 The `server/` directory and the Next.js `/api/session` route both implement this pattern. In production, replace these with your own backend endpoint.
 
+To enable conversation history, the session endpoint also sets `external_owner_id` to a stable identifier for the current user. This must come from your backend, not the frontend. The examples use a hardcoded `"demo-user"` value. See the [authentication guide](https://docs.kapa.ai/dev/agent/guides/authentication#conversation-history) for details.
+
 ## Packages
 
-- [`@kapaai/agent-core`](https://www.npmjs.com/package/@kapaai/agent-core) — Headless core (Agent class, streaming, tools, session management)
-- [`@kapaai/agent-react`](https://www.npmjs.com/package/@kapaai/agent-react) — React hooks and UI components
+- [`@kapaai/agent-react`](https://www.npmjs.com/package/@kapaai/agent-react) — React hooks and UI components. Includes `@kapaai/agent-core` as a dependency, so React examples only install this package.
+- [`@kapaai/agent-core`](https://www.npmjs.com/package/@kapaai/agent-core) — Headless core (Agent class, streaming, tools, session management). Used directly only by the `vanilla-js` example.
 
 ## License
 

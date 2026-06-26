@@ -31,13 +31,18 @@ const app = express();
 app.use(cors({ origin: ALLOWED_ORIGINS }));
 app.use(express.json());
 
-app.post('/api/session', async (_req, res) => {
+app.post('/api/session', async (req, res) => {
   try {
+    // In a real app, derive this from your auth layer (JWT, session cookie, etc.).
+    // The frontend must never control this value.
+    const external_owner_id = 'demo-user';
+
     const response = await fetch(
       `${API_URL}/agent/v1/projects/${PROJECT_ID}/agent/sessions/`,
       {
         method: 'POST',
-        headers: { 'X-API-Key': API_KEY },
+        headers: { 'X-API-Key': API_KEY, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ external_owner_id }),
       },
     );
 

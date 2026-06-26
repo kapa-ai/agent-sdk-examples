@@ -12,11 +12,16 @@ export async function POST() {
     );
   }
 
+  // In a real app, derive this from your auth layer (e.g. NextAuth session, JWT, etc.).
+  // The frontend must never control this value.
+  const external_owner_id = "demo-user";
+
   const res = await fetch(
     `${apiUrl}/agent/v1/projects/${projectId}/agent/sessions/`,
     {
       method: "POST",
-      headers: { "X-API-Key": apiKey },
+      headers: { "X-API-Key": apiKey, "Content-Type": "application/json" },
+      body: JSON.stringify({ external_owner_id }),
     }
   );
 
