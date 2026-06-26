@@ -10,7 +10,8 @@
     "@kapaai/agent-core": "latest",
     "dompurify": "^3.2.0",
     "marked": "^15.0.0",
-    "zod": "^3.23.0"
+    "zod": "^3.23.0",
+    "zod-to-json-schema": "^3.24.0"
   },
   "devDependencies": {
     "vite": "^6.0.0"

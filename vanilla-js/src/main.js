@@ -128,6 +128,7 @@ const agent = new Agent({
   integrationId: INTEGRATION_ID,
   model: AGENT_MODEL,
   tools,
+  enableHistory: true,
   getSessionToken: async () => {
     const res = await fetch(`${SESSION_SERVER}/api/session`, { method: 'POST' });
     if (!res.ok) throw new Error(`Session failed: ${res.status}`);
